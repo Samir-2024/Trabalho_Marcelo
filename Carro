@@ -1,0 +1,107 @@
+/* Define a classe Carro */
+public final class Carro {
+    private String modelo;
+    private int ano;
+    private double precoDiaria;
+    private boolean disponivel;
+
+
+    // Construtor inicializando todos os atributos
+    public Carro(String modelo, int ano, double precoDiaria, boolean disponivel) {
+        this.modelo = modelo;
+        this.ano = ano;
+        if (precoDiaria < 0) {
+            this.precoDiaria = 0.0;
+        } else {
+            this.precoDiaria = precoDiaria;
+        }
+        this.disponivel = disponivel;
+    }
+
+
+    // Getters
+    public String getModelo() {
+        return modelo;
+    }
+
+
+    public int getAno() {
+        return ano;
+    }
+
+
+    public double getPrecoDiaria() {
+        return precoDiaria;
+    }
+
+
+    public boolean isDisponivel() {
+        return disponivel;
+    }
+
+
+    // Setters
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+
+    public void setPrecoDiaria(double precoDiaria) {
+        if (precoDiaria < 0) {
+            System.out.println("Preço da diária deve ser maior que zero.");
+            this.precoDiaria = 0.0;
+        } else {
+            this.precoDiaria = precoDiaria;
+        }
+    }
+
+
+    // Setter para disponivel apenas permite modificar para false
+    public void setDisponivel(boolean disponivel) {
+        if (!disponivel) {
+            this.disponivel = false;
+        }
+    }
+
+
+    // Método para exibir as informações do carro
+    public void exibirInformacoes() {
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Ano: " + ano);
+        System.out.println("Preço da diária: " + precoDiaria);
+        System.out.println("Disponível: " + (disponivel ? "sim" : "não"));
+        System.out.println();
+    }
+
+
+    public static void main(String[] args) {
+        // Criando dois objetos da classe Carro
+        Carro carro1 = new Carro("Toyota Corolla", 2021, 150.00, true);
+        Carro carro2 = new Carro("Honda Civic", 2022, 180.00, false);
+
+
+        // Exibindo informações dos carros
+        System.out.println("Informações dos Carros:");
+        carro1.exibirInformacoes();
+        carro2.exibirInformacoes();
+
+
+        // Modificando o preço da diária e a disponibilidade de um dos carros
+        carro1.setPrecoDiaria(200.00);
+        carro2.setDisponivel(false); // Não é permitido alterar para true fora do construtor
+
+
+        // Exibindo novamente as informações após as modificações
+        System.out.println("Informações dos Carros após Modificações:");
+        carro1.exibirInformacoes();
+        carro2.exibirInformacoes();
+    }
+}
+
+
+
