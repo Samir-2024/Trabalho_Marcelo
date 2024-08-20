@@ -6,16 +6,16 @@ public class Carro {
     private double precoDiaria;
     private boolean disponivel;
 
-    // Construtor que inicializa todos os atributos
+    
     public Carro(int codigo, String modelo, int ano, double precoDiaria, boolean disponivel) {
         this.codigo = codigo;
         this.modelo = modelo;
         this.ano = ano;
-        setPrecoDiaria(precoDiaria); // Usando o setter para garantir validação
+        setPrecoDiaria(precoDiaria); 
         this.disponivel = disponivel;
     }
 
-    // Getters
+   
     public int getCodigo() {
         return codigo;
     }
@@ -36,7 +36,7 @@ public class Carro {
         return disponivel;
     }
 
-    // Setters
+    
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
@@ -58,7 +58,7 @@ public class Carro {
         this.disponivel = disponivel;
     }
 
-    // Método para exibir informações
+    
     public void exibirInformacoes() {
         System.out.println("Código: " + codigo);
         System.out.println("Modelo: " + modelo);
