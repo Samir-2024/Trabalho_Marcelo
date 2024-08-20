@@ -1,5 +1,5 @@
 public class Carro {
-    // Atributos privados
+   
     private int codigo;
     private String modelo;
     private int ano;
